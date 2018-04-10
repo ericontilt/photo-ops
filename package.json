@@ -16,6 +16,7 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "dependencies": {
+    "fast-exif": "^1.0.1",
     "rxjs": "^5.5.8"
   }
 }

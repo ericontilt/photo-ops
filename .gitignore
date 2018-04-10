@@ -15,3 +15,6 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# image samples folder
+image_samples/
