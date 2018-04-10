@@ -38,25 +38,11 @@ export const readdir$ = (dir: string) => {
 //
 export const stat$ = (path: string) => {
   return Rx.Observable.bindNodeCallback(fs.stat, (stat) => {
-    return getFilenameMetaData(path || '', { stat });
+    return new FilenameMetadata(path || '', stat);
   })(path);
 };
 
-interface IFilenameMetadata {
-  extension: string;
-  name: string;
-  location: string;
-  path: string;
-  stat: fs.Stats;
+class FilenameMetadata {
+  constructor(public path: string, public stat: fs.Stats) {
+  }
 }
-
-const getFilenameMetaData = (path, additionalMetadata): IFilenameMetadata => {
-  const extension = Path.extname(path);
-  return {
-    extension: Path.extname(path),
-    location: Path.dirname(path),
-    name: Path.basename(path, extension),
-    path,
-    ...additionalMetadata,
-  };
-};
