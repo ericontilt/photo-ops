@@ -1,0 +1,19 @@
+{
+  "name": "photo-ops",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/ericontilt/photo-ops.git",
+  "author": "Eric Beragg <eric.beragg@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^9.6.2",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.8.1"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.8"
+  }
+}
